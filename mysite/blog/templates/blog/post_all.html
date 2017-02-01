@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Blog List</h1>
+    {% for post in posts %}
+        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+        {{ post.modify_date|date:"N d, Y" }}
+        <p>{{ post.description }}</p>
+    {% endfor %}
+</body>
+</html>
