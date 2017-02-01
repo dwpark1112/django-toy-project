@@ -4,20 +4,19 @@ from django.db import models
 from django.core.urlresolvers import reverse
 
 # Create your models here.
-# allow unicode로 하면 한글 처리가 가능
 class Post(models.Model):
     title = models.CharField('TITLE', max_length=50)
     slug = models.SlugField('SLUG', unique=True, allow_unicode=True, help_text='one word for title alias')
     description = models.CharField('DESCRIPTION', max_length=100, blank=True, help_text='simple description text.')
     content = models.TextField('CONTENT')
-    create_date = models.DateTimeField('Create Date', auto_now_add=True) # 객체가 생성될 때 add
-    modify_date = models.DateTimeField('Modify Date', auto_now=True) # 객체가 변경될 때 시간 정보 자동 기록
+    create_date = models.DateTimeField('Create Date', auto_now_add=True)
+    modify_date = models.DateTimeField('Modify Date', auto_now=True)
 
     class Meta:
         verbose_name = 'post'
         verbose_name_plural = 'posts'
         db_table = 'my_post'
-        ordering = ('-modify_date')
+        ordering = ('-modify_date',)
 
     def __str__(self):
         return self.title
