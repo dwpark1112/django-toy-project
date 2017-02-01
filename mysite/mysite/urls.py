@@ -21,7 +21,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^bookmark/', include('bookmark.urls', namespace='bookmark')),
-    url(r'blog/', include('blogs.urls', namespace='blog'))
+    url(r'blog/', include('blog.urls', namespace='blog'))
 
     #Class-based views for Bookmark app
     #url(r'^bookmark/$', BookmarkLV.as_view(), name='index'),
