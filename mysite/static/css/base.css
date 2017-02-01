@@ -23,7 +23,7 @@ div#menu {
     display: table;
     table-layout: fixed;
     border-spacing: 40px 0px;
-    background: #ffa;
+    background: ghostwhite;
     font-size: 8px;
 }
 
@@ -40,7 +40,7 @@ div#footer {
     left: 50px;
     right: 50px;
     height: 30px;
-    border-top: 1px solid #ccc;
+    border-top:1px solid #ccc;
 }
 
 /* HEADER */
@@ -48,7 +48,7 @@ div#footer {
     display: table-cell;
     vertical-align: middle;
     padding-left: 20px;
-    color: #ffc;
+    color: #3366cc;
     font-weight: bold;
     font-size: 16px;
 }
@@ -56,16 +56,20 @@ div#footer {
 .welcome {
     display: table-cell;
     vertical-align: middle;
+    text-align: right;
+
+    padding-right: 20px;
     padding-left: 20px;
-    color: #ffc;
+    color: #3366cc;
     font-weight: normal;
     font-size: 12px;
 }
 
 .welcome a:link, .welcome a:visited {
-    color: white;
+    color: cornflowerblue;
 }
 
+/* MENU */
 div#menu a:link, div#menu a:visited {
     color: #36c;
 }
@@ -79,13 +83,13 @@ div#menu > li {
     font-weight: bold;
 }
 
-/* pull down menu */
-div#menu li ui {
-    display: none;
-    position: absolute;
+/* pulldown menu */
+div#menu li  ul {
+    display:none;
+    position:absolute;
     margin: 0;
-    padding: 10px 10px 5px 10px;
-    list-style: none;
+    padding:10px 10px 5px 10px;
+    list-style:none;
     border-right: 1px solid #ccc;
     border-left: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -93,8 +97,8 @@ div#menu li ui {
     z-index: 1;
 }
 
-div#menu li:hover ui {
-    display: block;
+div#menu li:hover ul {
+    display:block;
 }
 
 /* LINK */
