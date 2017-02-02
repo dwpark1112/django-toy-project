@@ -31,4 +31,7 @@ urlpatterns = [
 
     # example: /tag/tagName/
     url(r'tag/(?P<tag>[^/]+(?u))/$', PostTOL.as_view(), name='tagged_object_list'),
+
+    # example: /search/
+    url(r'^search/$', SearchFormView.as_view(), name='search'),
 ]
