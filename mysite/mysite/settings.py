@@ -40,8 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
-    'tagging.apps.TaggingConfig'
+    'tagging.apps.TaggingConfig',
+    'disqus',
+    'django.contrib.sites'
 ]
+
+DISQUS_API_KEY = 'zrbcSHEvcmpPpx27HNbp4iLVKdQaWfmGGTpcK9i8B9oZVWPjvFQStm3CdIU5nkAY'
+DISQUS_WEBSITE_SHORTNAME = 'software-2'
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
