@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}post_archive.html{% endblock %}
+
+{% block content %}
+<div id="content">
+
     <h1>Post Archive until {% now "N d, Y" %}</h1>
     <ul>
         {% for date in date_list %}
@@ -18,12 +18,11 @@
     <div>
         <ul>
             {% for post in object_list %}
-                <li>{{ post.modify_date|date:"Y-m-d" }}&nbsp;&nbsp;&nbsp;
-                    <a href="{{ post.get_absolute_url }}"><strong>{{ post.title }}</strong></a>
-                </li>
+            <li>{{ post.modify_date|date:"Y-m-d" }}&nbsp;&nbsp;&nbsp;
+                <a href="{{ post.get_absolute_url }}"><strong>{{ post.title }}</strong></a>
+            </li>
             {% endfor %}
         </ul>
     </div>
-
-</body>
-</html>
+</div>
+{% endblock %}
