@@ -25,4 +25,10 @@ urlpatterns = [
 
     # example: /today/
     url(r'^today/$', PostTAV.as_view(), name='post_today_archive'),
+
+    # example: /tag/
+    url(r'^tag/$', TagTV.as_view(), name='tag_cloud'),
+
+    # example: /tag/tagName/
+    url(r'tag/(?P<tag>[^/]+(?u))/$', PostTOL.as_view(), name='tagged_object_list'),
 ]
