@@ -18,17 +18,23 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf import settings
 
-#from bookmark.views import *
-from mysite.views import HomeView
+# from bookmark.views import *
+from mysite.views import HomeView, UserCreateView, UserCreateDoneTV
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    # 인증 관련
+    url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^accounts/register/$', UserCreateView.as_view(), name='register'),
+    url(r'^accounts/register/done/$', UserCreateDoneTV.as_view(), name='register_done'),
+
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^bookmark/', include('bookmark.urls', namespace='bookmark')),
     url(r'blog/', include('blog.urls', namespace='blog')),
     url(r'photo/', include('photo.urls', namespace='photo'))
 
-    #Class-based views for Bookmark app
-    #url(r'^bookmark/$', BookmarkLV.as_view(), name='index'),
-    #url(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail')
+    # Class-based views for Bookmark app
+    # url(r'^bookmark/$', BookmarkLV.as_view(), name='index'),
+    # url(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
