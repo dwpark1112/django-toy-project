@@ -9,6 +9,7 @@ It's just that's all.
 ## Reference
 * [파이썬 웹 프로그래밍 (실전편)](http://www.hanbit.co.kr/store/books/look.php?p_code=B7703021280)
 * [The Python Tutorial](https://docs.python.org/3/tutorial/)
+* [Learn Django, tutorialspoint](https://www.tutorialspoint.com/django/index.htm)
 
 
 ## History
@@ -16,3 +17,7 @@ It's just that's all.
 > **['django.contrib.auth'](https://docs.djangoproject.com/en/1.10/ref/contrib/auth/)** contains the core of the authentication framework, and its default models.
 
 I was able to create login/logout/register/change password functions quite comfortably.
+
+
+#### commit #13
+> **['django.views.generic.edit'](https://docs.djangoproject.com/en/1.10/ref/class-based-views/generic-editing/)** provide a foundation for editing content
